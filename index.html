@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sayana & Vivek – Wedding Invitation</title>
+  <meta name="description" content="Celebrate the wedding of Sayana & Vivek. Muhurtham and venue details." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --ink:#231f1a;
+    --muted:#6d6458;
+    --gold:#b58e2f;
+    --gold-2:#e0c066;
+    --card:#ffffff;
+    --ring: rgba(181,142,47,.25);
+    --radius: 18px;
+    --hero-image: url('hero.jpg'); /* background photo */
+  }
+  *{box-sizing:border-box}html,body{margin:0;padding:0}
+  body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+  h1,h2,h3{line-height:1.2;margin:0 0 .6rem}
+  h1{font-size:clamp(3rem,6vw,5.2rem);letter-spacing:.02em}
+  h2{font-size:clamp(1.9rem,3.4vw,2.5rem);color:var(--gold)}
+  h3{font-size:1.25rem}
+  a{color:var(--gold);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .btn,.btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.3rem;border-radius:999px;border:0;cursor:pointer;font-weight:600;transition:all .25s}
+  .btn{background:linear-gradient(90deg,var(--gold) 0%, var(--gold-2) 100%);color:#fff;box-shadow:0 6px 16px rgba(181,142,47,.25)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(181,142,47,.32)}
+  .btn-outline{background:rgba(255,255,255,.7);backdrop-filter: blur(8px);color:#5c4817;border:2px solid rgba(181,142,47,.55)}
+  .btn-outline:hover{background:#fff}
+  .section{padding:3rem 1rem;max-width:1100px;margin:0 auto}
+  .timeline{list-style:none;padding:0;margin:1rem 0;display:grid;gap:.8rem}
+  .timeline li{background:var(--card);border:1px solid #eee;border-radius:18px;padding:1rem;display:grid;grid-template-columns:170px 1fr;gap:1rem;align-items:center;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+  .timeline time{font-weight:700;color:var(--gold)}
+  .venue-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1.2rem}
+  .map-wrap{border-radius:18px;overflow:hidden;border:1px solid #eee;height: 420px;background:#ddd}
+  .map-wrap iframe{width:100%;height:100%;border:0}
+
+  /* === Animated Peach & Blush Hero with faded photo === */
+  .hero{
+    position:relative;overflow:hidden;color:#2a210f;
+    min-height:86vh;display:grid;place-items:center;text-align:center;
+    background: linear-gradient(160deg, #ffe1cf 0%, #ffd7e6 55%, #ffe9f2 100%);
+  }
+  .hero .bg-img{position:absolute;inset:0;background-image: var(--hero-image);background-size:cover;background-position:center;filter:saturate(1.05) contrast(1.05) blur(.2px);opacity:.55;}
+  .hero .overlay{position:absolute;inset:0;pointer-events:none;background:linear-gradient(160deg, rgba(255,225,207,.72) 0%, rgba(255,215,230,.68) 45%, rgba(255,233,242,.65) 100%);mix-blend-mode:multiply;}
+  .hero::before,.hero::after{
+    content:"";position:absolute;inset:-20%;
+    background: radial-gradient(40% 30% at 20% 30%, rgba(255,150,150,.55), transparent 60%),
+                radial-gradient(35% 28% at 80% 25%, rgba(255,210,140,.55), transparent 60%),
+                radial-gradient(32% 26% at 40% 80%, rgba(190,210,255,.45), transparent 60%);
+    animation: floatBlush 20s ease-in-out infinite alternate;filter: blur(10px);
+  }
+  .hero::after{animation-delay:-10s;opacity:.95;transform:scale(1.08)}
+  @keyframes floatBlush{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-4%,-3%,0) scale(1.08)}}
+  /* gold shimmer ring */
+  .glow{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+  .glow::before{content:"";width:min(80vmin,760px);height:min(80vmin,760px);border-radius:50%;
+    background: radial-gradient(circle, rgba(208,175,66,.33) 0%, rgba(208,175,66,0) 70%);
+    animation:pulse 12s ease-in-out infinite alternate;box-shadow:0 0 120px rgba(208,175,66,.25), inset 0 0 60px rgba(208,175,66,.2);
+  }
+  @keyframes pulse{from{transform:scale(1)} to{transform:scale(1.08)}}
+
+  .hero-inner{position:relative;z-index:1;padding:5rem 1rem 3rem;max-width:1100px;margin:auto}
+  .names{display:flex;align-items:center;justify-content:center;gap:.6rem;flex-wrap:wrap}
+  .names h1{font-family:'Great Vibes', cursive; font-weight:400;
+    background: linear-gradient(90deg, #b58e2f, #e0c066);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    text-shadow: 0 2px 10px rgba(208,175,66,.25);
+  }
+  .names .amp{font-family:'Great Vibes', cursive}
+  .tagline{font-size:1.12rem;color:#413a30;margin-bottom:.6rem;text-shadow:0 1px 0 rgba(255,255,255,.6)}
+  .date,.location{font-weight:700;text-shadow:0 1px 0 rgba(255,255,255,.6)}
+
+  .hero-row{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-top:1.2rem}
+
+  /* Thank You block */
+  .thankyou{padding:2.5rem 1rem;text-align:center}
+  .thankyou .script{font-family:'Great Vibes', cursive; font-size:clamp(2rem,4.5vw,3.2rem);
+    background: linear-gradient(90deg, #b58e2f, #e0c066);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow: 0 2px 10px rgba(208,175,66,.15);
+  }
+  .thankyou p{color:#6d6458;margin-top:.4rem}
+
+  @media (max-width:940px){.venue-grid{grid-template-columns:1fr}.timeline li{grid-template-columns:140px 1fr}}
+  
+  /* Fancy section titles across the site */
+  .section h2 {
+    font-family:'Great Vibes', cursive;
+    font-weight:400;
+    font-size:clamp(2.2rem,4.5vw,3rem);
+    line-height:1.1;
+    margin-bottom:.75rem;
+    background: linear-gradient(90deg, #b58e2f, #e0c066);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow: 0 2px 10px rgba(208,175,66,.18);
+    text-align:center;
+  }
+  .section h2::after {
+    content:"";
+    display:block;
+    width:120px;
+    height:2px;
+    margin:.5rem auto 1.2rem;
+    background: linear-gradient(90deg, rgba(0,0,0,0), #d9ba5a, rgba(0,0,0,0));
+    border-radius:2px;
+    box-shadow:0 0 12px rgba(208,175,66,.35);
+  }
+  /* Center section content slightly for symmetry */
+  .section { text-align: left; }
+
+  
+  .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+  .ph{aspect-ratio:4/5;border-radius:14px;background:linear-gradient(135deg,#fff4cf,#ffe1f0);
+      border:1px dashed #d1b45c;display:grid;place-items:center;font-weight:600;color:#7a6728}
+  @media (max-width:560px){.photo-grid{grid-template-columns:1fr}}
+
+  
+  /* --- Monogram (S & V) with gold shimmer + fade-in --- */
+  .monogram{
+    font-family:'Great Vibes', cursive;
+    font-weight:400;
+    font-size:clamp(3rem,7vw,5rem);
+    line-height:1;
+    margin:0 0 .2rem;
+    background: linear-gradient(120deg, #b58e2f, #e0c066, #b58e2f);
+    background-size: 200% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow: 0 2px 10px rgba(208,175,66,.18);
+    animation: shimmer 8s linear infinite, fadeInSoft 1.4s ease both;
+  }
+  .monogram-tag{
+    font-family:'Cormorant Garamond', serif;
+    font-size:clamp(1rem,2.6vw,1.25rem);
+    letter-spacing:.02em;
+    color:#3b3328;
+    margin:0 0 .6rem;
+    opacity:.95;
+    animation: fadeInSoft 1.6s ease both .2s;
+  }
+  /* Gold shimmer for names too */
+  .names h1{
+    background: linear-gradient(120deg, #b58e2f, #e0c066, #b58e2f);
+    background-size: 200% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    text-shadow: 0 2px 10px rgba(208,175,66,.25);
+    animation: shimmer 10s linear infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+  @keyframes fadeInSoft {
+    from { opacity:0; transform: translateY(8px) scale(.98); }
+    to { opacity:1; transform: translateY(0) scale(1); }
+  }
+
+  /* Serif usage */
+  .date, .location { font-family:'Cormorant Garamond', serif; }
+  .timeline time, .timeline div { font-family:'Cormorant Garamond', serif; font-size:1.05rem; }
+  .venue-grid h3, .venue-grid p, .venue-grid .note { font-family:'Cormorant Garamond', serif; }
+
+  /* Animated gold dividers (date + section titles) */
+  .date-divider, .section h2::after, .thankyou .script::after {
+    content:"";
+    display:block;
+    height:2px;
+    margin:.5rem auto 1.2rem;
+    width:120px;
+    border-radius:2px;
+    background: linear-gradient(90deg, rgba(0,0,0,0), #d9ba5a, rgba(0,0,0,0));
+    position:relative;
+    overflow:hidden;
+  }
+  .date-divider::before, .section h2::after::before, .thankyou .script::after::before{
+    content:"";
+    position:absolute; top:-1px; left:-20%;
+    width:40%; height:4px; border-radius:3px;
+    background: linear-gradient(90deg, rgba(255,255,255,.0), rgba(255,255,255,.9), rgba(255,255,255,.0));
+    filter: blur(2px);
+    animation: sweep 5s linear infinite;
+  }
+  @keyframes sweep {
+    0% { left:-30%; }
+    100% { left: 90%; }
+  }
+
+  /* Thank you line in Cormorant Garamond */
+  .thankyou .script { font-family:'Cormorant Garamond', serif; }
+
+  
+  /* Playfair Display for timing & venue details (larger + bolder) */
+  .timeline time {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: .02em;
+  }
+  .timeline div, .timeline div strong {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 600;
+    font-size: 1.12rem;
+    letter-spacing: .01em;
+  }
+  .venue-grid h3 {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 600;
+    font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+    letter-spacing: .01em;
+  }
+
+  
+  /* Gold small-caps italic event titles with soft underline shimmer */
+  .event-title{
+    position:relative;
+    display:inline-block;
+    font-family:'Playfair Display', serif;
+    font-variant-caps: all-small-caps;
+    font-style: italic;
+    font-weight:600;
+    letter-spacing:.03em;
+    background: linear-gradient(120deg, #b58e2f, #e0c066, #b58e2f);
+    background-size:200% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow: 0 1px 6px rgba(208,175,66,.18);
+    animation: shimmer 12s linear infinite;
+    padding-bottom:.25rem;
+  }
+  .event-title::after{
+    content:"";
+    position:relative;
+    display:block;
+    width:80px;
+    height:2px;
+    margin:.15rem 0 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0), #d9ba5a, rgba(0,0,0,0));
+    border-radius:2px;
+    box-shadow:0 0 8px rgba(208,175,66,.28);
+    overflow:hidden;
+  }
+  .event-title::before{
+    content:"";
+    position:absolute;
+    left:-20%;
+    bottom:-4px;
+    width:40%;
+    height:4px;
+    border-radius:3px;
+    background: linear-gradient(90deg, rgba(255,255,255,.0), rgba(255,255,255,.9), rgba(255,255,255,.0));
+    filter: blur(2px);
+    animation: sweep 6s linear infinite;
+  }
+
+  
+  /* Venue title in Great Vibes with soft gold shimmer */
+  .venue-title{
+    font-family:'Great Vibes', cursive;
+    font-weight:400;
+    font-size:clamp(1.6rem,3vw,2.2rem);
+    line-height:1.1;
+    background: linear-gradient(120deg, #b58e2f, #e0c066, #b58e2f);
+    background-size:200% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow: 0 2px 10px rgba(208,175,66,.18);
+    animation: shimmer 12s linear infinite;
+    margin-bottom:.3rem;
+  }
+
+  /* Google Maps button styled to match venue */
+  .maps-btn{
+    font-family:'Great Vibes', cursive;
+    font-weight:400;
+    font-size:1.1rem;
+    color:#b58e2f !important;
+    border:2px solid #d9ba5a !important;
+    background: rgba(255,255,255,.7);
+    text-decoration:none;
+  }
+  .maps-btn:hover{
+    background: linear-gradient(90deg,#b58e2f,#e0c066) !important;
+    color:#fff !important;
+  }
+
+  /* Reveal-on-scroll */
+  .reveal{opacity:0; transform:translateY(8px); transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  
+  .venue-location{
+    display:flex;align-items:center;gap:.5rem;margin-top:.6rem;
+    font-family:'Playfair Display', serif;
+    font-weight:600;letter-spacing:.01em;
+    font-size:1.05rem;
+    color:#5a4a1a;
+  }
+  .venue-location span{
+    background: linear-gradient(120deg, #b58e2f, #e0c066, #b58e2f);
+    background-size:200% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow: 0 1px 6px rgba(208,175,66,.18);
+    animation: shimmer 14s linear infinite;
+  }
+
+  
+  /* Solid gold text for venue location lines (better visibility) */
+  .venue-location, .venue-location-left{
+    display:flex;align-items:center;gap:.5rem;margin-top:.6rem;
+    font-family:'Playfair Display', serif;
+    font-weight:600;letter-spacing:.01em;
+    font-size:1.1rem;
+    color:#5a4a1a;
+  }
+  .venue-location span, .venue-location-left span{
+    color:#b58e2f; /* solid gold */
+  }
+
+  
+  /* Soft gold divider under left-side venue location */
+  .venue-location-divider{
+    width:140px;height:2px;margin:.6rem 0 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0), #d9ba5a, rgba(0,0,0,0));
+    border-radius:2px;box-shadow:0 0 10px rgba(208,175,66,.28);
+  }
+
+  
+  /* Centered location under map with brighter gold and larger font */
+  .venue-location.centered{
+    justify-content:center;
+    text-align:center;
+    margin-top:.8rem;
+  }
+  .venue-location, .venue-location-left{
+    display:flex;align-items:center;gap:.5rem;
+    font-family:'Playfair Display', serif;
+    font-weight:600;letter-spacing:.01em;
+    font-size:1.15rem;
+    color:#5a4a1a;
+  }
+  .venue-location span{ color:#c39a34; } /* brighter gold */
+  .map-top-divider{
+    width:160px;height:2px;margin:.8rem 0 .8rem;
+    background: linear-gradient(90deg, rgba(0,0,0,0), #d9ba5a, rgba(0,0,0,0));
+    border-radius:2px;box-shadow:0 0 10px rgba(208,175,66,.28);
+  }
+
+  
+  /* Single centered location under map: Great Vibes + animated gold shimmer */
+  .venue-location{
+    display:flex;align-items:center;gap:.5rem;margin-top:.8rem;
+    font-family:'Great Vibes', cursive;
+    justify-content:center;text-align:center;
+  }
+  .venue-location span{
+    font-size:clamp(1.3rem,3vw,1.6rem);
+    line-height:1.1;
+    background: linear-gradient(120deg, #b58e2f, #e0c066, #b58e2f);
+    background-size:200% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow: 0 2px 10px rgba(208,175,66,.18);
+    animation: shimmer 12s linear infinite;
+  }
+
+  </style>
+</head>
+<body>
+  <header class="hero image-theme">
+    <span class="bg-img" aria-hidden="true"></span>
+    <span class="overlay" aria-hidden="true"></span>
+    <span class="glow" aria-hidden="true"></span>
+    <div class="hero-inner">
+      <div class="monogram">S &amp; V</div>
+      <div class="monogram-tag">The Wedding of Sayana &amp; Vivek</div>
+      <div class="names"><h1><span>Sayana</span> <span class="amp">&amp;</span> <span>Vivek</span></h1></div>
+      <p class="tagline">Together in love, forever in joy</p>
+      <p class="date">Sunday, 7 December 2025</p>
+      <div class="date-divider" aria-hidden="true"></div>
+      <p class="location">St. Sebastian's Syro-Malabar Church, Koodaranhi</p>
+      <div class="hero-row">
+        <a href="#schedule" class="btn-outline">Schedule</a>
+        <a href="#venue" class="btn-outline">Venue</a>
+        <a href="bride-family.html" class="btn">Bride’s Family</a>
+        <a href="groom-family.html" class="btn">Groom’s Family</a>
+        <a class="btn-outline" id="addToCalendar" href="#">Add to Calendar</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="schedule" class="section">
+      <h2>Schedule</h2>
+      <ul class="timeline">
+        <li><time>11:20 AM – 12:00 PM</time><div><strong class="event-title">Muhurtham</strong></div></li>
+      </ul>
+    </section>
+
+    <section id="venue" class="section">
+      <h2>Venue</h2>
+      <div class="venue-grid">
+        <div>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-top:.6rem;text-align:center">
+            <a class="btn-outline maps-btn" id="openMaps" class="maps-btn reveal" href="https://www.google.com/maps/place/St.+Sebastian's+Syro-Malabar+Church,+Koodaranhi/@11.3666564,76.0615189,14z" target="_blank" rel="noopener">Open in Google Maps</a>
+          </div>
+        </div>
+        <div class="map-top-divider" aria-hidden="true"></div>
+        <div class="map-wrap">
+          <iframe title="Venue Map" loading="lazy"
+            src="https://www.google.com/maps?q=St.+Sebastian's+Syro-Malabar+Church,+Koodaranhi&z=14&output=embed"></iframe>
+
+        </div>
+
+
+</div>
+    </section>
+
+    
+    <section id="photos" class="section">
+      <h2>Bride &amp; Groom Photos</h2>
+      <div class="photo-grid">
+        <div class="ph">Bride &amp; Groom</div>
+        <div class="ph">Bride &amp; Groom</div>
+        <div class="ph">Bride &amp; Groom</div>
+      </div>
+      <p class="note" style="text-align:center;margin-top:.6rem">Tip: replace each box with an &lt;img src="..." alt="..."&gt; for your photos.</p>
+    </section>
+
+    <section class="thankyou">
+      <div class="script">With love, Sayana & Vivek</div>
+      <p>Thank you for being part of our special day.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p style="color:#6d6458">Made with ♥ for Sayana & Vivek</p>
+  </footer>
+
+  <!-- Music (kept) -->
+  <audio id="bgm" src="sunset_ambient.wav" loop autoplay muted></audio>
+  <button id="audioToggle" aria-label="Play background music"
+          style="position:fixed;right:16px;bottom:16px;z-index:100;
+                 border:0;border-radius:999px;padding:.7rem 1rem;
+                 background:linear-gradient(90deg,#b58e2f,#e0c066);
+                 color:#fff;font-weight:700;box-shadow:0 6px 16px rgba(181,142,47,.28);
+                 cursor:pointer">
+    ▶︎ Music
+  </button>
+
+  <script>
+  function buildICSLink({title, dateISO, durationMinutes, location, description}){
+    const start = new Date(dateISO);
+    const end = new Date(start.getTime() + durationMinutes*60*1000);
+    const fmt = (d)=> d.toISOString().replace(/[-:]/g,"").split(".")[0]+"Z";
+    const ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Invite//Wedding//EN","BEGIN:VEVENT","DTSTAMP:"+fmt(new Date()),"DTSTART:"+fmt(start),"DTEND:"+fmt(end),"SUMMARY:"+title,"LOCATION:"+location,"DESCRIPTION:"+description,"END:VEVENT","END:VCALENDAR"].join("\r\n");
+    return "data:text/calendar;charset=utf8,"+encodeURIComponent(ics);
+  }
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const addCal = document.getElementById("addToCalendar");
+    addCal.href = buildICSLink({
+      title:"Muhurtham — Sayana & Vivek",
+      dateISO:"2025-12-07T11:20:00+05:30",
+      durationMinutes:40,
+      location:"St. Sebastian's Syro-Malabar Church, Koodaranhi",
+      description:"Muhurtham: 11:20 AM to 12:00 PM"
+    });
+    addCal.setAttribute("download","sayana-vivek-muhurtham.ics");
+  });
+
+  // Music toggle logic
+  (function(){
+    const btn = document.getElementById('audioToggle');
+    const audio = document.getElementById('bgm');
+    if(!btn || !audio) return;
+    function refresh(){
+      if(audio.muted || audio.paused){ btn.textContent = '▶︎ Music'; btn.setAttribute('aria-label','Play background music'); }
+      else { btn.textContent = '⏸︎ Music'; btn.setAttribute('aria-label','Pause background music'); }
+    }
+    btn.addEventListener('click', async ()=>{
+      if(audio.paused){ audio.muted = false; await audio.play().catch(()=>{}); }
+      else { audio.pause(); }
+      refresh();
+    });
+    const onFirstInteract = ()=>{ if(audio.muted){ audio.muted = false; audio.play().catch(()=>{}); refresh(); } window.removeEventListener('pointerdown', onFirstInteract); };
+    window.addEventListener('pointerdown', onFirstInteract, {once:true});
+    refresh();
+  })();
+  </script>
+</body>
+
+  <script>
+  (function(){
+    const els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(e=>e.classList.add('in')); return; }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(ent=>{
+        if(ent.isIntersecting){ ent.target.classList.add('in'); io.unobserve(ent.target); }
+      });
+    }, {threshold: 0.15});
+    els.forEach(e=> io.observe(e));
+  })();
+  </script>
+</html>
