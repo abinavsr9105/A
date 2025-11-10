@@ -120,11 +120,11 @@ a:hover{text-decoration:underline}
   text-align: center;
   font-size: 2rem;
   font-weight: 600;
-  color: #a3822b; /* gold tone */
-  margin-bottom: 1rem;
+  color: #a3822b; /* elegant gold tone */
+  margin-bottom: 1.2rem;
   position: relative;
 }
-/* Optional gold shimmer line below title */
+/* Golden shimmer line under headings */
 .section h2::after {
   content: "";
   display: block;
@@ -134,31 +134,33 @@ a:hover{text-decoration:underline}
   background: linear-gradient(90deg, #b58e2f, #e0c066, #b58e2f);
   border-radius: 2px;
 }
-/* Grid layout for photos */
+/* :frame_with_picture: Grid layout — always 3 per row on large screens */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   justify-items: center;
-  margin-top: 1rem;
   text-align: center;
+  margin-top: 1rem;
+  padding: 0 2rem;
 }
-/* Style each photo + caption group */
+/* Each photo and its caption */
 .photo-grid figure {
   margin: 0;
 }
-/* Image style */
+/* Photo style */
 .photo-grid img {
   width: 100%;
-  height: 440px;
+  max-width: 360px;       /* size per photo card */
+  height: 440px;          /* equal height for uniform look */
   object-fit: cover;
   border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.18);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .photo-grid img:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 26px rgba(0,0,0,.25);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
 }
 /* Caption style */
 .photo-grid figcaption {
@@ -168,14 +170,23 @@ a:hover{text-decoration:underline}
   font-style: italic;
   text-align: center;
 }
-/* Mobile adjustments */
+/* :iphone: Responsive tweaks for smaller devices */
+@media (max-width: 900px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 600px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
   .photo-grid img {
+    max-width: 90vw;
     height: auto;
     aspect-ratio: 3 / 4;
   }
 }
-    
+
 </style>
 </head>
 <body>
