@@ -43,23 +43,38 @@ a:hover{text-decoration:underline}
     -webkit-background-clip:text; background-clip:text; color:transparent;
     text-shadow: 0 2px 10px rgba(208,175,66,.15);
   }
-    .photo-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:1rem;
-    justify-items:center;
-    margin-top:0.8rem;
-  }
-  .photo-grid img {
+    .photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(340px, 1fr)); /* large cells */
+  gap: 1.2rem;
+  justify-items: center;
+}
+
+/* Fill each card; no “max-width” cap on desktop */
+.photo-grid img {
   width: 100%;
-  max-width: 420px;       /* increased size from 320px → 420px */
-  aspect-ratio: 3 / 4;    /* slightly wider shape, looks more natural */
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0,0,0,.2);
+  max-width: none;      /* remove the 300/320px cap */
+  height: 460px;        /* tall, premium look */
+  object-fit: cover;    /* crop nicely without distortion */
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.18);
   display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Tablet: two columns */
+@media (max-width: 1100px) {
+  .photo-grid { grid-template-columns: repeat(2, minmax(320px, 1fr)); }
+  .photo-grid img { height: 420px; }
+}
+
+/* Mobile: one column, let height follow aspect */
+@media (max-width: 700px) {
+  .photo-grid { grid-template-columns: 1fr; }
+  .photo-grid img {
+    height: auto;
+    aspect-ratio: 3 / 4;   /* keeps a nice portrait shape on phones */
+    max-width: 90vw;       /* use most of the screen width */
+  }
 }
 
   .hero h1 {
