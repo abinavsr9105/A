@@ -119,6 +119,17 @@
   .ph{aspect-ratio:4/5;border-radius:14px;background:linear-gradient(135deg,#fff4cf,#ffe1f0);
       border:1px dashed #d1b45c;display:grid;place-items:center;font-weight:600;color:#7a6728}
   @media (max-width:560px){.photo-grid{grid-template-columns:1fr}}
+    photo-grid img{
+  width: 100%;              /* fill the grid column */
+  max-width: 300px;         /* avoid huge images on wide screens */
+  aspect-ratio: 4 / 5;      /* nice portrait shape */
+  height: auto;             /* keep proportions */
+  object-fit: cover;        /* crop nicely if aspect ratio differs */
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  display: block;
+  margin: 0 auto;           /* center each image in its grid cell */
+}
 
   
   /* --- Monogram (S & V) with gold shimmer + fade-in --- */
