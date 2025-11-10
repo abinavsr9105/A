@@ -481,7 +481,7 @@
       <div class="contact-card">
         <b>Phone:</b>
         <div style="display:flex;flex-direction:column;gap:.4rem;margin-top:.4rem;">
-        <a href="tel:+919633620202">Abinav   :+91 96336 20202</a>
+        <a href="tel:+919633620202">Abinav   :+91 96333 62022</a>
         <a href="tel:+919048632802">Surendran:+91 90486 32802</a>
       </div>
     </div>
@@ -494,19 +494,10 @@
   </main>
 
   <footer class="site-footer">
-    <p style="color:#6d6458">Made with ♥ for Sayana & Vivek</p>
+    <p style="color:#6d6458">Made with ❤ for Sayana & Vivek</p>
   </footer>
 
-  <!-- Music (kept) -->
-  <audio id="bgm" src="sunset_ambient.wav" loop autoplay muted></audio>
-  <button id="audioToggle" aria-label="Play background music"
-          style="position:fixed;right:16px;bottom:16px;z-index:100;
-                 border:0;border-radius:999px;padding:.7rem 1rem;
-                 background:linear-gradient(90deg,#b58e2f,#e0c066);
-                 color:#fff;font-weight:700;box-shadow:0 6px 16px rgba(181,142,47,.28);
-                 cursor:pointer">
-    ▶︎ Music
-  </button>
+
 
   <script>
   function buildICSLink({title, dateISO, durationMinutes, location, description}){
@@ -528,25 +519,7 @@
     addCal.setAttribute("download","sayana-vivek-muhurtham.ics");
   });
 
-  // Music toggle logic
-  (function(){
-    const btn = document.getElementById('audioToggle');
-    const audio = document.getElementById('bgm');
-    if(!btn || !audio) return;
-    function refresh(){
-      if(audio.muted || audio.paused){ btn.textContent = '▶︎ Music'; btn.setAttribute('aria-label','Play background music'); }
-      else { btn.textContent = '⏸︎ Music'; btn.setAttribute('aria-label','Pause background music'); }
-    }
-    btn.addEventListener('click', async ()=>{
-      if(audio.paused){ audio.muted = false; await audio.play().catch(()=>{}); }
-      else { audio.pause(); }
-      refresh();
-    });
-    const onFirstInteract = ()=>{ if(audio.muted){ audio.muted = false; audio.play().catch(()=>{}); refresh(); } window.removeEventListener('pointerdown', onFirstInteract); };
-    window.addEventListener('pointerdown', onFirstInteract, {once:true});
-    refresh();
-  })();
-  </script>
+ 
 </body>
 
   <script>
