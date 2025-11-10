@@ -50,16 +50,17 @@ a:hover{text-decoration:underline}
     justify-items:center;
     margin-top:0.8rem;
   }
-  .photo-grid img{
-    width:100%;
-    max-width:320px;      /* tweak: 280–340px to change size */
-    aspect-ratio:4/5;     /* consistent portrait frame */
-    height:auto;
-    object-fit:cover;     /* fills frame without distortion */
-    border-radius:14px;
-    box-shadow:0 4px 12px rgba(0,0,0,.15);
-    display:block;
-    margin:0 auto;
+  .photo-grid img {
+  width: 100%;
+  max-width: 420px;       /* increased size from 320px → 420px */
+  aspect-ratio: 3 / 4;    /* slightly wider shape, looks more natural */
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.2);
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
   }
   @media (max-width:768px){ .photo-grid{ grid-template-columns:repeat(2,1fr);} }
   @media (max-width:480px){ .photo-grid{ grid-template-columns:1fr;} }
