@@ -113,41 +113,28 @@
   }
   /* Center section content slightly for symmetry */
   .section { text-align: left; }
+    .photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-items: center;
+}
 
-  
-  .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
-  .ph{aspect-ratio:4/5;border-radius:14px;background:linear-gradient(135deg,#fff4cf,#ffe1f0);
-      border:1px dashed #d1b45c;display:grid;place-items:center;font-weight:600;color:#7a6728}
-  @media (max-width:560px){.photo-grid{grid-template-columns:1fr}}
-    .photo-grid .slot{
+.photo-grid img {
   width: 100%;
-  max-width: 320px;       /* change to 280–360px if you want smaller/bigger */
-  aspect-ratio: 4 / 5;    /* keeps all slots the same shape */
+  max-width: 320px;
+  aspect-ratio: 4 / 5;
+  height: auto;
+  object-fit: cover;
   border-radius: 14px;
-  overflow: hidden;       /* hides overflow so image can’t spill out */
   box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  display: block;
   margin: 0 auto;
 }
 
-/* Make the image fill the frame neatly */
-.photo-grid .slot img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* crop nicely, no distortion */
-  object-position: center;/* keep center of photo visible */
-  display: block;
-}
-    .photo-grid img{
-  width: 100%;              /* fill the grid column */
-  max-width: 300px;         /* avoid huge images on wide screens */
-  aspect-ratio: 4 / 5;      /* nice portrait shape */
-  height: auto;             /* keep proportions */
-  object-fit: cover;        /* crop nicely if aspect ratio differs */
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.15);
-  display: block;
-  margin: 0 auto;           /* center each image in its grid cell */
-}
+  
+
+    
 
   
   /* --- Monogram (S & V) with gold shimmer + fade-in --- */
@@ -449,10 +436,10 @@
     <section id="photos" class="section">
       <h2>Bride &amp; Groom Photos</h2>
       <div class="photo-grid">
-       <div class="slot"> <img src="bg1.jpg" alt="Bride and Groom 1">
-          <div class="slot"> <img src="bg2.jpg" alt="Bride and Groom 2">
-             <div class="slot"> <img src="bg3.jpg" alt="Bride and Groom 3">
-                <div class="slot"> <img src="bg4.jpg" alt="Bride and Groom 4">
+        <img src="bg1.jpg" alt="Bride and Groom 1">
+         <img src="bg2.jpg" alt="Bride and Groom 2">
+             < <img src="bg3.jpg" alt="Bride and Groom 3">
+                <img src="bg4.jpg" alt="Bride and Groom 4">
       </div>
     </section>
 
