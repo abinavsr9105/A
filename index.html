@@ -285,20 +285,33 @@
 
   
   /* Venue title in Great Vibes with soft gold shimmer */
-  .venue-title{
-    font-family:'Great Vibes', cursive;
-    font-weight:400;
-    font-size:clamp(1.6rem,3vw,2.2rem);
-    line-height:1.1;
-    background: linear-gradient(120deg, #b58e2f, #e0c066, #b58e2f);
-    background-size:200% 100%;
-    -webkit-background-clip:text; background-clip:text; color:transparent;
-    text-shadow: 0 2px 10px rgba(208,175,66,.18);
-    animation: shimmer 12s linear infinite;
-    margin-bottom:.3rem;
-  }
-
-  /* Google Maps button styled to match venue */
+ .venue-title {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  background: linear-gradient(120deg, #B58E2F, #E0C066, #B58E2F);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 10px rgba(208,175,66,.25);
+  animation: shimmer 12s linear infinite;
+  margin-top: .6rem;
+  margin-bottom: .6rem;
+  text-align: center;
+}
+.venue-address {
+  font-family: 'Marcellus', serif;
+  color: #5c4a1f;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+ @keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}/* Google Maps button styled to match venue */
   .maps-btn{
     font-family:'Great Vibes', cursive;
     font-weight:400;
@@ -428,7 +441,9 @@
 
     <section id="venue" class="section">
       <h2>Venue</h2>
-      <div class="venue-grid">
+      <div class="venue-title">St. Sebastian’s Auditorium</div>
+<div class="venue-address">Koodaranhi</div>
+ <div class="venue-grid">
         <div>
 </div>
 
